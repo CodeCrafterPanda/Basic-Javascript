@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Typing Tester App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        .alert{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron p-3">
+            <div class="container">
+                <h4 class="text-center">Typing Tester App - By Sushilkumar</h4>
+                <hr>
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-primary">
+                            Total Words <span class="badge badge-light" id="wordsTotal"></span>
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-success">
+                            Words / Minute <span class="badge badge-light" id="wordsPerMinute">0</span>
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-warning">
+                            Accuracy <span class="badge badge-light" id="accuracy">0%</span>
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-info">
+                            Efficiency <span class="badge badge-light" id="efficiency">0%</span>
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="lead"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="progress mt-2 mb-2" style="height: 30px;">
+            <div class="progress-bar" role="progressbar" id="progressbar" style="width: 0%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Start Typing</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea" id="input" onpaste="return false;" onkeydown="no_backspaces(event);"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary float-left mt-2">
+            Remaining Seconds <span class="badge badge-light" id="displaySeconds">60</span>
+        </button>
+        <button type="button" class="btn btn-primary float-right mt-2" id="reset" disabled>Reset</button>
+        <div class="clearfix"></div>
+        <div class="col-md-6 offset-md-3 mt-3 text-center">
+            <div class="alert alert-success" role="alert" id="success">
+                Congratulations! Your Accuracy and Typing Efficiency is Good.
+            </div>
+            <div class="alert alert-danger" role="alert" id="danger">
+                You need to focus on your Accuracy as well as Typing Efficiency.
+            </div>
+            <div class="alert alert-warning" role="alert" id="warning">
+                You need to focus on your Typing Efficiency.
+            </div>
+        </div>
+    </div>
+    <script src="typing.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</body>
+
+</html>
